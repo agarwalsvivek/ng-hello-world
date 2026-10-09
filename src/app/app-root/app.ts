@@ -9,5 +9,5 @@ import { Hello } from '../hello/hello';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('ag-hello-world');
+  protected readonly title = signal('ng-hello-world');
 }

@@ -21,7 +21,7 @@ import {
   templateUrl: './hello.html',
 })
 export class Hello {
-  protected readonly title = signal('ag-hello-world');
+  protected readonly title = signal('ng-hello-world');
   protected readonly showDetails = signal(true);
   protected readonly isActive = signal(false);
   protected readonly fruits = signal(['Apple', 'Banana', 'Cherry']);

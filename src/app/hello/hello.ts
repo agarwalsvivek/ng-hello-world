@@ -16,7 +16,7 @@ import {
 
 @Component({
   imports: [AsyncPipe],
-  selector: 'hello',
+  selector: 'app-hello',
   styleUrl: '../app-root/app.css',
   templateUrl: './hello.html',
 })

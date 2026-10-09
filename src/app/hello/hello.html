@@ -1,0 +1,43 @@
+<main class="main">
+    <div class="content-hello">
+        <h1>App Hello</h1>
+
+        <!-- Class & style bindings (replace ngClass / ngStyle) -->
+        <p [class.active]="isActive()" [style.fontWeight]="isActive() ? 'bold' : 'normal'">
+            Active: {{ isActive() }}
+        </p>
+        <button (click)="isActive.set(!isActive())">Toggle active</button>
+
+        <!-- Built-in control flow (replaces *ngIf / *ngFor) -->
+        <button (click)="showDetails.set(!showDetails())">Toggle list</button>
+        @if (showDetails()) {
+            <ul>
+                @for (fruit of fruits(); track fruit) {
+                    <li>{{ fruit }}</li>
+                } @empty {
+                    <li>No fruits</li>
+                }
+            </ul>
+        } @else {
+            <p>List hidden</p>
+        }
+
+        <!-- Observables -->
+        <h3>Observables</h3>
+        <p>Seconds on page: {{ seconds$ | async }}</p>
+
+        <input #searchBox placeholder="Search fruits" (input)="search(searchBox.value)" />
+        <p>Keystrokes: {{ keystrokes() }}</p>
+        @if (searching()) {
+            <p>Searching…</p>
+        } @else {
+            <ul>
+                @for (fruit of results(); track fruit) {
+                    <li>{{ fruit }}</li>
+                } @empty {
+                    <li>No matches</li>
+                }
+            </ul>
+        }
+    </div>
+</main>
